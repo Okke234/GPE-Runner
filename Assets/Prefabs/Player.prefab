@@ -152,12 +152,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 225f717e3db135e47a95a997bd52a4f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jumpHeight: 2
+  forwardSpeed: 5
+  lateralSpeed: 100
+  forwardTargetVelocity: 20
+  lateralTargetVelocity: 10
+  running: 1
+  jumpHeight: 4
   jumpTimeout: 0.1
   grounded: 0
   groundLayers:
     serializedVersion: 2
     m_Bits: 64
+  _lateralVelocity: 0
 --- !u!114 &4628579915403164244
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -171,6 +177,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   move: {x: 0, y: 0}
+  moving: 0
   jump: 0
 --- !u!1 &3520847414651892073
 GameObject:

@@ -4,6 +4,7 @@ using UnityEngine.InputSystem;
 public class PlayerInputs : MonoBehaviour
 {
     public Vector2 move;
+    public bool moving;
     public bool jump;
 
     public void OnMove(InputValue value)
@@ -19,6 +20,7 @@ public class PlayerInputs : MonoBehaviour
     public void MoveInput(Vector2 newMoveDirection)
     {
         move = newMoveDirection;
+        moving = newMoveDirection != Vector2.zero;
     }
 
     public void JumpInput(bool newJumpState)
