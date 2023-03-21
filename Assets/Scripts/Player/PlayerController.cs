@@ -44,13 +44,6 @@ public class PlayerController : MonoBehaviour
         _jumpTimeoutDelta = jumpTimeout;
         _controller = GetComponent<CharacterController>();
         _input = GetComponent<PlayerInputs>();
-        
-        // Test cubes
-        for (var i = 0; i < 50; i++)
-        {
-            var cube = GameObject.CreatePrimitive(PrimitiveType.Cube);
-            cube.transform.position = new Vector3(2.0f, 1.0f, 10f * i);
-        }
     }
 
     private void Update()
