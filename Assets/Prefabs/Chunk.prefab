@@ -113,6 +113,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a33149fe6fed0974b91e583b696cf7e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  obstaclePrefabs:
+  - {fileID: 6457458802462726799, guid: de3651fb1df00f04dadc901c427d4915, type: 3}
   obstacles: []
 --- !u!1 &741071711528152313
 GameObject:
