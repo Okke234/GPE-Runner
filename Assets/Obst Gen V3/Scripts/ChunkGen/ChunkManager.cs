@@ -11,10 +11,10 @@ namespace Obst_Gen_V3.Scripts.ChunkGen
         [SerializeField] private Chunk chunkPrefab;
         private const float ChunkLength = 10f;
         private const int InitialSpawnQuantity = 12;
-        public const int MaxObstacles = 3;
+        public const int MaxObstacles = 5;
         private readonly Quaternion _defaultRotation = Quaternion.Euler(90f, 0f, 0f);
-        public Queue<Chunk> Chunks = new Queue<Chunk>();
-        private Obst_Gen_V1.Scripts.Player.Player player;
+        public Queue<Chunk> Chunks;
+        private Obst_Gen_V3.Scripts.Player.Player _player;
 
         #region Singleton
         private static ChunkManager _instance;
@@ -36,7 +36,8 @@ namespace Obst_Gen_V3.Scripts.ChunkGen
 
         private void Start()
         {
-            player = Obst_Gen_V1.Scripts.Player.Player.Instance;
+            _player = Player.Player.Instance;
+            Chunks = new Queue<Chunk>();
             SpawnInitialChunks();
             
             // Test cubes
@@ -68,13 +69,13 @@ namespace Obst_Gen_V3.Scripts.ChunkGen
 
         private bool ShouldSpawnChunk()
         {
-            return Mathf.Abs((Chunks.Last().transform.position - player.transform.position).z)
+            return Mathf.Abs((Chunks.Last().transform.position - _player.transform.position).z)
                    <= maxSpawnDistance;
         }
 
         private bool ShouldDeleteChunk()
         {
-            return Mathf.Abs((Chunks.First().transform.position - player.transform.position).z)
+            return Mathf.Abs((Chunks.First().transform.position - _player.transform.position).z)
                    >= minDeleteDistance;
         }
 
